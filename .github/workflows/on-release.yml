@@ -1,0 +1,14 @@
+name: On Release
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Test
+      uses: skx/github-action-tester@master
